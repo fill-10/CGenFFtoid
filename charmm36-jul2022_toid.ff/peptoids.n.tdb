@@ -1,0 +1,43 @@
+[ NHTOD ]
+; by X. Luo
+;
+;   [HT1] => add H to the N terminus
+;    |
+;    N---CA5---CxHyOz
+;    |
+;HA2-CA-HA1
+;    |
+;    |
+;
+; According to Nan's Halogen work
+; [HT1] will pull some charge from CA;
+; N of type NTOID will have no change in its atomic charge
+; CA changes from -0.008 to -0.11
+; HT1 has the charge of 0.102
+;
+[ replace ]
+; name of the atom being replaced, new atom name (opt.), new atom type, new mass, new charge
+ CA    CA    CG321    12.011    -0.110
+[ add ]
+; Two line entry:
+; number of atoms added, method of adding, name of the new atom, control atoms
+; atom type, mass, charge, charge group
+ 1 	2	HT1  N	CA	CA5  ; not all the peptoids have CA5, it can be CB
+; 1 	1	HT1  N	CA	HA1  ; all peptoids have -N-CA (HA1,HA2), but it may overlap with CA5 side chain.
+ HGP1    1.008    0.102   -1  ; charge 0.102
+
+[ TDNH2+ ] ; protonated peptoid, borrowed from proline
+[ replace ] 
+ N	  N	   NTOID	14.0070 -0.07 ; 
+ CA   CA   CG321	12.011	 0.029 ; backbone CA
+ HA1  HA1   HGA2    1.008    0.123
+ HA2  HA2   HGA2    1.008    0.123
+ CA5  CA5  CG321 	12.011	 0.029 ;  side chain CA5
+ HA3  HA3   HGA2    1.008    0.123
+ HA4  HA4   HGA2    1.008    0.123
+[ add ]
+; num func name i j k
+; type mass charge chg_grp 
+ 2	 4	 HN  N  CA  C ; as in proline-NH2
+  HGP1  1.008	 0.26	 -1 ; tot charge=+1, reparam N CA HA1 HA2 CA5 HA3 HA4
+

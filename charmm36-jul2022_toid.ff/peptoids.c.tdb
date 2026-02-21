@@ -1,0 +1,24 @@
+
+[ None ]
+; Modified based on standard by Michel Cuendet.
+; Use the charges and types from Nan Li's halogen work
+; impropers not changed.
+[ CT2TD ]
+;[ replace ]
+; Nan's work does not change the charges on carbon atoms.
+; C		CC		12.011	0.55
+; O		O		15.9994 -0.55
+[ add ]
+ 1	2	NT	C	CA	N
+	NG2S2 14.0027 -0.62	-1
+ 2	3	HT	NT	C	CA
+	H	1.008	0.00   -1
+[ replace ]
+ HT1		HGP1	1.008	0.30	; this one is trans to O
+ HT2		HGP1	1.008	0.32	; this one is cis to O; Nan assigned HT1 as the cis and its charge accordingly.
+[ impropers ]
+; C	NT	CA	O
+ C	CA	NT	O  ; Nan only had this improper
+; NT C	HT1 HT2
+; NT C	HT2 HT1
+

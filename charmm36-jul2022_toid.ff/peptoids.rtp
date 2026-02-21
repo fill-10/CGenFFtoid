@@ -1,0 +1,1186 @@
+; converted from Nan Li's top_peo_ntoid_10.21.top
+[ bondedtypes ]
+  1  5  9  2  1  3  1  0
+
+[ NTE ]
+;     |   HA3  HB1     HD1 HE1    HH1  HT5      HK1    
+;     |   |    |       |   |       |   |       /       
+;     N --CA5--CB--OG--CD--CE--OZ--CH--CT--OI--CK--HK2 
+;     |   |	   |       |   |       |   |       \       
+;     |   HA4  HB2     HD2 HE2     HH2 HT6      HK3    
+; HA1-CA-HA2                                           
+;     |                                                
+;     |                                                
+;   O=C                                                
+;     |                                                
+;
+    [ atoms ]
+    N    NTOID  -0.354      0
+    CA   CG321  -0.008      0 
+    HA1  HGA2     0.09      0
+    HA2  HGA2     0.09      0
+    CA5  CG321   0.002      1      
+    HA3  HGA2     0.09      1
+    HA4  HGA2     0.09      1
+    CB   CG321   -0.01      2
+    HB1  HGA2     0.09      2 
+    HB2  HGA2     0.09      2
+    OG   OG301   -0.34      3     
+    CD   CG321   -0.01      4
+    HD1  HGA2     0.09      4  
+    HD2  HGA2     0.09      4
+    CE   CG321   -0.01      5    
+    HE1  HGA2     0.09      5  
+    HE2  HGA2     0.09      5
+    OZ   OG301   -0.34      6     
+    CH   CG321   -0.01      7     
+    HH1  HGA2     0.09      7      
+    HH2  HGA2     0.09      7
+    CT   CG321   -0.01      8    
+;    HT3  HGA2     0.09      8 
+;    HT4  HGA2     0.09      8
+; pdb2gmx cannot read in HT3, it recognizes HT3 as H3 and returns an error;
+; Perhaps it could be due to the missing of HT1 and HT2,
+; while this only happens in the NTE, NPE, etc. in this file.
+; It is unexpected that Nan had HT1 and HT2 in the figure,
+; but HT3 and HT4 in the text.
+; Let's name them HT5 and HT6.
+    HT5  HGA2     0.09      8  
+    HT6  HGA2     0.09      8
+    OI   OG301   -0.34      9     
+    CK   CG331    -0.1     10    
+    HK1  HGA3     0.09     10   
+    HK2  HGA3     0.09     10
+    HK3  HGA3     0.09     10
+    C    CG2O1    0.53     11
+    O    OG2D1   -0.53     11
+    [ bonds ]
+    N    CA5 
+    N    CA 
+    C    +N  
+    CA   C
+    CA   HA1 
+    CA   HA2
+    CA5  CB  
+    CB   OG
+    CB   HB1  
+    CB   HB2  
+    CA5  HA3
+    CA5  HA4
+    OG   CD  
+    CD   CE  
+    CE   OZ
+    CD   HD1
+    CD   HD2
+    CE   HE1  
+    CE   HE2
+    OZ   CH  
+    CH   CT  
+    CT   OI
+    OI   CK  
+    CH   HH1  
+    CH   HH2  
+    CT   HT5  
+    CT   HT6
+    CK   HK1 
+    CK   HK2  
+    CK   HK3
+    C    O
+    [ impropers ]
+    ;N -C CA CA5 
+    ;C CA +N O  
+    C CA +N O 
+
+[ SAR ]
+;       |     HB1  
+;       |    /     
+;       N---CA5-HB2
+;       |    \     
+;       |     HB3  
+;       |
+;   HA1-CA-HA2
+;       |
+;     O=C
+;       |
+;       |
+    [ atoms ]
+    N    NTOID  -0.354    0
+    HA1  HGA2    0.090    0
+    CA   CG321  -0.008    0
+    HA2  HGA2    0.090    0   
+    CA5  CG331  -0.088    1
+    HB1  HGA3    0.090    1
+    HB2  HGA3    0.090    1
+    HB3  HGA3    0.090    1
+    C    CG2O1   0.530    2
+    O    OG2D1  -0.530    2
+    [ bonds ]
+    N   CA5  
+    N   CA  
+    CA  HA1  
+    CA  HA2
+    C   CA  
+    C   +N  
+    CA5 HB1  
+    CA5 HB2  
+    CA5 HB3
+    O   C
+    [ impropers ]
+    ;N -C CA  CA5
+    ;C CA +N O
+    C CA +N O
+
+[ NPH ] ; old name : PHP, but carb.rtp also has PHP
+;     |         HD1  HE1
+;     |          |    |
+;     |   HB1  CD1--CE1
+;     |   |    //     \\
+;     N---CB--CG       CZ-HZ
+;     |   |    \       /
+;     |  HB2   CD2==CE2
+;     |          |    |
+;HA1-CA-HA2      HD2  HE2
+;     |
+;     |
+;   O=C
+;     |
+;     |
+    [ atoms ]
+    N    NTOID  -0.350    0
+    CA   CG321  -0.008    0
+    HA1  HGA2    0.090    0
+    HA2  HGA2    0.090    0
+    C    CG2O1   0.530    1
+    O    OG2D1  -0.530    1
+    CB   CG321  -0.027    2
+    HB1  HGA2    0.090    2
+    HB2  HGA2    0.090    2  
+    CG   CG2R61 -0.025    3     
+    CD1  CG2R61 -0.122    3 
+    CD2  CG2R61 -0.122    3  
+    CE1  CG2R61 -0.115    3      
+    CE2  CG2R61 -0.115    3 
+    CZ   CG2R61 -0.115    3 
+    HD1  HGR61   0.115    3 
+    HD2  HGR61   0.115    3 
+    HE1  HGR61   0.115    3 
+    HE2  HGR61   0.115    3 
+    HZ   HGR61   0.115    3 
+    [ bonds ]
+    N   CA 
+    CA  C   
+    C  +N 
+    CA  HA1 
+    CA  HA2 
+    CZ  HZ
+    CD1 HD1 
+    CD2 HD2 
+    CE1 HE1
+    CE2 HE2 
+    CG  CD1 
+    CD1 CE1
+    CE1 CZ  
+    CZ  CE2 
+    CE2 CD2
+    CD2 CG  
+    N   CB  
+    CB  HB1
+    CB  HB2
+    CB  CG
+    C   O
+    [ impropers ]
+    C CA +N O
+
+
+[ CHI ]
+;      |     HB3        HD1  HE1
+;      |      |         |    |
+;      | HB4-CB2-HB2  CD1--CE1
+;      |      |       //     \\
+;      N-----CB1-----CG       CZ-HZ
+;      |      |       \       /
+;      |     HB1      CD2==CE2
+;      |              |    |
+; HA1-CA-HA2          HD2  HE2
+;      |
+;      |
+;    O=C
+;      |
+;
+    [ atoms ]
+    N    NTOID  -0.353    0
+    CA   CG321  -0.008    0
+    HA1  HGA2    0.090    0
+    HA2  HGA2    0.090    0 
+    C    CG2O1   0.530    1
+    O    OG2D1  -0.530    1
+    CB1  CG311   0.09     2
+    HB1  HGA1    0.09     2
+    HB2  HGA3    0.09     2
+    CB2  CG331  -0.27     2
+    HB3  HGA3    0.09     2
+    HB4  HGA3    0.09     2
+    CG   CG2R61  0.015    3 
+    CD1  CG2R61 -0.122    3 
+    CE1  CG2R61 -0.115    3 
+    CZ   CG2R61 -0.115    3 
+    CE2  CG2R61 -0.115    3 
+    CD2  CG2R61 -0.122    3 
+    HD1  HGR61   0.115    3 
+    HD2  HGR61   0.115    3 
+    HE1  HGR61   0.115    3 
+    HE2  HGR61   0.115    3 
+    HZ   HGR61   0.115    3 
+    [ bonds ]
+    N   CA  
+    CA  C   
+    C  +N
+    CA  HA1 
+    CA  HA2 
+    CZ  HZ
+    CD1 HD1 
+    CD2 HD2 
+    CE1 HE1
+    CE2 HE2 
+    CG  CD1 
+    CD1 CE1
+    CE1 CZ  
+    CZ  CE2 
+    CE2 CD2
+    CD2 CG  
+    N   CB1 
+    CB1 CB2
+    CB1 HB1 
+    CB2 HB2 
+    CB2 HB3
+    CB2 HB4 
+    CB1 CG
+    C   O
+    [ impropers ]
+    C CA +N O
+
+[ NET ]
+;     |   HA3   HB1  
+;     |   |     |   
+;     N --CA5--CB--HB3
+;     |   |		|   
+;     |   HA4   HB2  
+; HA1-CA-HA2          
+;     |              
+;     |  
+;   O=C   
+;     |
+;
+    [ atoms ]
+    N    NTOID  -0.354    0
+    CA   CG321  -0.008    0
+    HA1  HGA2    0.09     0
+    HA2  HGA2    0.09     0
+    CA5  CG321   0.002    1           
+    HA3  HGA2    0.09     1
+    HA4  HGA2    0.09     1
+    CB   CG331  -0.27     2    
+    HB1  HGA3    0.09     2       
+    HB2  HGA3    0.09     2
+    HB3  HGA3    0.09     2       
+    C    CG2O1   0.53     3
+    O    OG2D1  -0.53     3
+    [ bonds ]
+    CB  CA5 
+    N   CA5  
+    N   CA  
+    C   CA   
+    C  +N  
+    CA  HA1  
+    CA  HA2 
+    CB  HB1 
+    CB  HB2   
+    CB  HB3 
+    CA5 HA3  
+    CA5 HA4
+    O   C  
+    [ impropers ]
+    ; N   -C CA  CA5  
+    ; C CA +N O   
+    C CA +N O
+
+[ NPE ]
+    [ atoms ]                   ;                    HD1  HE1
+    N    NTOID  -0.354      0   ;                     |    |
+    CA   CG321  -0.008      0   ;     |   HA3   HB1  CD1-CE1
+    HA1  HGA2     0.09      0   ;	  |   |     |   //      \\
+    HA2  HGA2     0.09      0   ;     N --CA5--CB--CG       CZ1-HZ
+    CA5  CG321   0.002      1   ;     |   |		|   \   __  /
+    HA3  HGA2     0.09      1   ; 	  |   HA4   HB2  CD2--CE2
+    HA4  HGA2     0.09      1   ; HA1-CA-HA2          |    |
+    CB   CG321   -0.18      2   ;     |              HD2  HE2
+    HB1  HGA2     0.09      2   ;     |   
+    HB2  HGA2     0.09      2   ;   O=C         
+    CG   CG2R61   0.00      3   ;     | 
+    CD1  CG2R61  -0.115     4   ;
+    HD1  HGR61    0.115     4
+    CE1  CG2R61  -0.115     5
+    HE1  HGR61    0.115     5   ; modified the charge group from Nan.
+    CZ1  CG2R61  -0.115     6
+    HZ   HGR61    0.115     6
+    CD2  CG2R61  -0.115     7
+    HD2  HGR61    0.115     7
+    CE2  CG2R61  -0.115     8
+    HE2  HGR61    0.115     8
+    C    CG2O1    0.53      9
+    O    OG2D1   -0.53      9
+    [ bonds ]
+    CB  CA5
+    CG  CB     
+    N   CA5
+    N   CA
+    C   CA   
+    C   +N
+    CA  HA1
+    CA  HA2
+    CB  HB1
+    CB  HB2    
+    CG  CD2
+    CD1 CE1  
+    CE2 CZ1
+    CD1 HD1  
+    CD2 HD2  
+    CE1 HE1  
+    CE2 HE2  
+    CZ1 HZ
+    CA5 HA3
+    CA5 HA4
+    O   C  
+    CG  CD1  
+    CD2 CE2  
+    CE1 CZ1
+    [ impropers ]
+    ; N   -C CA  CA5
+    ; C CA +N O 
+    C  CA  +N  O  
+    
+[ NPEP ]   
+;                    HD1  HE1           
+;                     |    |            
+;     |   HA3   HB1  CD1-CE1         HH1 
+;  	  |   |     |   //      \\      /   
+;     N --CA5--CB--CG       CZ1--CH1-HH2
+;     |   |		|   \   __  /      \ HH3
+;  	  |   HA4   HB2  CD2--CE2            
+; HA1-CA-HA2          |    |            
+;     |              HD2  HE2           
+;     |                                 
+;   O=C                                   
+;     |                                 
+;                         
+    [ atoms ]
+    N    NTOID   -0.354    0  
+    CA   CG321   -0.008    0  
+    HA1  HGA2     0.09     0  
+    HA2  HGA2     0.09     0  
+    CA5  CG321   0.002     1 
+    HA3  HGA2     0.09     1 
+    HA4  HGA2     0.09     1 
+    CB   CG321   -0.18     2     
+    HB1  HGA2     0.09     2   
+    HB2  HGA2     0.09     2         
+    CG   CG2R61  -0.002    3
+    CD1  CG2R61  -0.117    4
+    HD1  HGR61    0.115    4
+    CE1  CG2R61  -0.109    5
+    HE1  HGR61    0.115    5
+    CZ1  CG2R61  -0.001    6
+    CD2  CG2R61  -0.117    7
+    HD2  HGR61    0.115    7
+    CE2  CG2R61  -0.109    8
+    HE2  HGR61    0.115    8
+    CH1  CG331   -0.275    9
+    HH1  HGA3     0.09     9
+    HH2  HGA3     0.09     9   
+    HH3  HGA3     0.09     9
+    C    CG2O1    0.53    10
+    O    OG2D1   -0.53    10
+    [ bonds ]
+    CB  CA5 
+    CG  CB     
+    N   CA5  
+    N   CA  
+    C   CA   
+    C  +N  
+    CA  HA1  
+    CA  HA2 
+    CB  HB1 
+    CB  HB2    
+    CG  CD2  
+    CD1 CE1 
+    CE2 CZ1
+    CD1 HD1  
+    CD2 HD2 
+    CE1 HE1 
+    CE2 HE2 
+    CZ1 CH1
+    CH1 HH1 
+    CH1 HH2  
+    CH1 HH3
+    CA5 HA3  
+    CA5 HA4
+    O   C  
+    CG  CD1  
+    CD2 CE2  
+    CE1 CZ1
+    [ impropers ]
+    ; N   -C CA  CA5  
+    ; C CA +N O   
+    C CA +N O   
+
+[ NBPE ]
+;                     HD1  HE1     HD3  HE3
+;                      |    |       |    |       
+;     |   HA3   HB1  CD1-CE1      CD3-CE3   
+;  	  |   |     |   //      \\   //      \\ 
+;     N --CA5--CB--CG       CZ1-CG2       CZ2-HZ2
+;     |   |		|   \   __  /    \   __  /  
+;  	  |   HA4   HB2  CD2--CE2     CD4--CE4
+; HA1-CA-HA2          |    |       |    |
+;     |              HD2  HE2     HD4  HE4
+;     |  
+;   O=C   
+;     |
+;
+    [ atoms ]   				  
+    N    NTOID  -0.354    0   
+    CA   CG321  -0.008    0 
+    HA1  HGA2     0.09    0
+    HA2  HGA2     0.09    0
+    CA5  CG321   0.002    1
+    HA3  HGA2     0.09    1
+    HA4  HGA2     0.09    1
+    CB   CG321   -0.18    2
+    HB1  HGA2     0.09    2
+    HB2  HGA2     0.09    2
+    CG   CG2R61  -0.002   3
+    CD1  CG2R61  -0.115   4
+    HD1  HGR61    0.115   4
+    CE1  CG2R61  -0.115   5
+    HE1  HGR61    0.115   5
+    CZ1  CG2R67  -0.002   6
+    CD2  CG2R61  -0.115   7
+    HD2  HGR61    0.115   7
+    CE2  CG2R61  -0.109   8
+    HE2  HGR61    0.115   8
+    CG2  CG2R67  -0.002   9
+    CD3  CG2R61  -0.115   10
+    HD3  HGR61    0.115   10
+    CE3  CG2R61  -0.115   11
+    HE3  HGR61    0.115   11
+    CZ2  CG2R61  -0.115   12
+    HZ2  HGR61    0.115   12 
+    CD4  CG2R61  -0.115   13
+    HD4  HGR61    0.115   13
+    CE4  CG2R61  -0.115   14
+    HE4  HGR61    0.115   15
+    C    CG2O1    0.53    16
+    O    OG2D1   -0.53    16
+    [ bonds ]
+    CB CA5 
+    CG CB     
+    N  CA5 
+    N  CA 
+    C CA   
+    C  +N 
+    CA HA1 
+    CA HA2
+    CB HB1 
+    CB HB2    
+    CG CD2  
+    CD1 CE1 
+    CE2 CZ1
+    CG2 CD4 
+    CD3 CE3  
+    CE4 CZ2
+    CD1 HD1  
+    CD2 HD2  
+    CE1 HE1  
+    CE2 HE2
+    CZ1 CG2
+    CD3 HD3 
+    CD4 HD4  
+    CE3 HE3  
+    CE4 HE4 
+    CZ2 HZ2
+    CA5 HA3 
+    CA5 HA4
+    O  C  
+    CG CD1  
+    CD2 CE2  
+    CE1 CZ1
+    CG2 CD3  
+    CD4 CE4  
+    CE3 CZ2
+    [ impropers ]
+    ; N   -C CA  CA5  
+    ;C CA +N O 
+    C CA +N O  
+
+[ NAMT ]
+;                     HD1  HE1  
+;                      |    |   
+;     |   HA3   HB1  CD1-CE1       HK1
+;  	  |   |     |   //      \\    /
+;     N --CA5--CB--CG       CZ1--NK
+;     |   |		|   \   __  /     \
+;  	  |   HA4   HB2  CD2--CE2      HK2
+; HA1-CA-HA2          |    |     
+;     |              HD2  HE2    
+;     |  
+;   O=C   
+;     |
+;
+; The ligand is from CB and rightwards, 
+; which is the 4-methylaniline in the standard cgenff4.6.
+; The code is [ SM092 ].
+; Atom types and improper dihed from the automated tool 
+; on silcsbio.org is consistent with [ SM092 ],
+; showing the best parameterization.
+; Atomic charges are from terachem resp calculation,
+; which are different from [ SM092 ] but maintain
+; most features. 
+; 
+    [ atoms ]   				  
+    N    NTOID  -0.354    0   
+    CA   CG321  -0.008    0 
+    HA1  HGA2     0.09    0
+    HA2  HGA2     0.09    0
+    CA5  CG321   0.002    1
+    HA3  HGA2     0.09    1
+    HA4  HGA2     0.09    1  
+    CB   CG321  -0.207    2  
+    HB1  HGA2    0.082    2
+    HB2  HGA2    0.082    2
+    CG   CG2R61  0.202    3
+    CD1  CG2R61 -0.250    4
+    HD1  HGR61   0.146    4
+    CD2  CG2R61 -0.250    5
+    HD2  HGR61   0.146    5
+    CE1  CG2R61 -0.205    6
+    HE1  HGR61   0.145    6
+    CE2  CG2R61 -0.205    7
+    HE2  HGR61   0.145    7
+    CZ1  CG2R61  0.253    8
+    NK   NG2S3  -0.736    9
+    HK1  HGP4    0.326    9
+    HK2  HGP4    0.326    9
+    C    CG2O1    0.53    10
+    O    OG2D1   -0.53    10
+    [ bonds ]
+    N    CA 
+    CA   HA1 
+    CA   HA2
+    N    CA5 
+    CA5  HA3
+    CA5  HA4
+    CA5  CB 
+    CB   HB1 
+    CB   HB2    
+    CB   CG    
+    CG   CD1
+    CD1  HD1
+    CG   CD2  
+    CD2  HD2
+    CD1  CE1 
+    CE1  HE1 
+    CD2  CE2 
+    CE2  HE2 
+    CE1  CZ1 
+    CE2  CZ1 
+    CZ1  NK  
+    NK   HK1 
+    NK   HK2 
+    CA   C
+    O    C
+    C   +N
+    [ impropers ]
+    NK  HK2  HK1  CZ1   
+    ; N   -C CA  CA5  
+    ;C CA +N O 
+    C CA +N O  
+
+[ NALM ]
+;                     HD1  HE1  
+;                      |    |   
+;     |   HA3   HB1  CD1-CE1       HK2
+;  	  |   |     |   //      \\    /
+;     N --CA5--CB--CG       CZ1--NK-HK1
+;     |   |		|   \   __  /     \
+;  	  |   HA4   HB2  CD2--CE2      HK3
+; HA1-CA-HA2          |    |     
+;     |              HD2  HE2    
+;     |  
+;   O=C   
+;     |
+;
+    [ atoms ]   				  
+    N    NTOID  -0.354    0   
+    CA   CG321  -0.008    0 
+    HA1  HGA2     0.09    0
+    HA2  HGA2     0.09    0
+    CA5  CG321   0.002    1
+    HA3  HGA2     0.09    1
+    HA4  HGA2     0.09    1  
+    CB   CG321   -0.176   2  
+    HB1  HGA2     0.113   2
+    HB2  HGA2     0.113   2
+    CG   CG2R61   0.171   3
+    CD1  CG2R61  -0.126   4
+    HD1  HGR61    0.170   4
+    CD2  CG2R61  -0.126   5
+    HD2  HGR61    0.170   5
+    CE1  CG2R61  -0.255   6
+    HE1  HGR61    0.188   6
+    CE2  CG2R61  -0.255   7
+    HE2  HGR61    0.188   7
+    CZ1  CG2R61   0.183   8
+    NK   NG3P3   -0.375   9
+    HK1  HGP2     0.339   9
+    HK2  HGP2     0.339   9
+    HK3  HGP2     0.339   9
+    C    CG2O1    0.53    10
+    O    OG2D1   -0.53    10
+    [ bonds ]
+    N    CA 
+    CA   HA1 
+    CA   HA2
+    N    CA5 
+    CA5  HA3
+    CA5  HA4
+    CA5  CB 
+    CB   HB1 
+    CB   HB2    
+    CB   CG    
+    CG   CD1
+    CD1  HD1
+    CG   CD2  
+    CD2  HD2
+    CD1  CE1 
+    CE1  HE1 
+    CD2  CE2 
+    CE2  HE2 
+    CE1  CZ1 
+    CE2  CZ1 
+    CZ1  NK  
+    NK   HK1 
+    NK   HK2 
+    NK   HK3 
+    CA   C
+    O    C
+    C   +N
+    [ impropers ]
+    ; N   -C CA  CA5  
+    ;C CA +N O 
+    C CA +N O  
+
+[ NZOC ]
+; ligand from CB and right. Ligand: p-toluic acid, or namely 4-methylbenzoic acid.
+; Neutral.
+    [ atoms ]                   ;                    HD1  HE1
+    N    NTOID  -0.354      0   ;                     |    |
+    CA   CG321  -0.008      0   ;     |   HA3   HB1  CD1-CE1     OT
+    HA1  HGA2     0.09      0   ;	  |   |     |   //      \\   ||
+    HA2  HGA2     0.09      0   ;     N --CA5--CB--CG        CZ--CH--OI--HI
+    CA5  CG321   0.002      1   ;     |   |		|   \   __  /
+    HA3  HGA2     0.09      1   ; 	  |   HA4   HB2  CD2--CE2
+    HA4  HGA2     0.09      1   ; HA1-CA-HA2          |    |
+    CB   CG321   -0.18      2   ;     |              HD2  HE2
+    HB1  HGA2     0.09      2   ;     |   
+    HB2  HGA2     0.09      2   ;   O=C         
+    CG   CG2R61   0.00      3   ;     | 
+    CD1  CG2R61  -0.115     4   ;
+    HD1  HGR61    0.115     4
+    CD2  CG2R61  -0.115     6
+    HD2  HGR61    0.115     6
+    CE1  CG2R61  -0.115     5
+    HE1  HGR61    0.115     5 
+    CE2  CG2R61  -0.115     7
+    HE2  HGR61    0.115     7
+    CZ   CG2R61   0.08      8
+    CH   CG2O2    0.46      8
+    OT   OG2D1   -0.46      8
+    OI   OG311   -0.51      8
+    HI   HGP1     0.43      8
+    C    CG2O1    0.53      9
+    O    OG2D1   -0.53      9
+    [ bonds ]
+    N   CA
+    CA  HA1
+    CA  HA2
+    N   CA5
+    CA5 HA3
+    CA5 HA4
+    CA5 CB
+    CB  CG
+    CB  HB1
+    CB  HB2    
+    CG  CD1  
+    CD1 HD1  
+    CG  CD2
+    CD2 HD2  
+    CD1 CE1  
+    CE1 HE1  
+    CD2 CE2  
+    CE2 HE2  
+    CE1 CZ
+    CE2 CZ
+    CZ  CH
+    CH  OT
+    CH  OI
+    OI  HI
+    CA  C 
+    O   C  
+    C   +N
+    [ impropers ]
+    CH CZ  OT OI
+    ; N   -C CA  CA5
+    ; C CA +N O 
+    C  CA  +N  O 
+
+[ N3CB ]
+; N-substitute ethyl benzoate
+; graft with benzoate: 3CB, total q = -1
+;                    HD1  HE1
+;                     |    |
+;     |   HA3   HB1  CD1-CE1      O1
+;	  |   |     |   //      \\   /
+;     N --CA5--CB--CG        CZ--CH
+;     |   |		|   \   __  /    \
+; 	  |   HA4   HB2  CD2--CE2     O2
+; HA1-CA-HA2          |    |
+;     |              HD2  HE2
+;     |  
+;   O=C  
+;     | 
+    [ atoms ]                 
+    N    NTOID  -0.354      0 
+    CA   CG321  -0.008      0 
+    HA1  HGA2     0.09      0 
+    HA2  HGA2     0.09      0 
+    CA5  CG321   0.002      1 
+    HA3  HGA2     0.09      1 
+    HA4  HGA2     0.09      1 
+    CB   CG321   -0.18      2  
+    HB1  HGA2     0.09      2    
+    HB2  HGA2     0.09      2          
+    CG   CG2R61   0.        3
+    CD1  CG2R61  -0.1150    4
+    HD1  HGR61    0.1150    4
+    CD2  CG2R61  -0.1150    5
+    HD2  HGR61    0.1150    5
+    CE1  CG2R61  -0.1150    6
+    HE1  HGR61    0.1150    6
+    CE2  CG2R61  -0.1150    7
+    HE2  HGR61    0.1150    7
+    CZ   CG2R61  -0.1000    8
+    CH   CG2O3    0.6200    8
+    O1   OG2D2   -0.7600    8
+    O2   OG2D2   -0.7600    8
+    C    CG2O1    0.53      9
+    O    OG2D1   -0.53      9
+  [ bonds ]
+    N   CA
+    CA  HA1
+    CA  HA2
+    N   CA5
+    CA5 HA3
+    CA5 HA4
+    CA5 CB
+    CB  HB1
+    CB  HB2    
+    CB  CG
+    CG  CD1  
+    CD1 HD1  
+    CG  CD2
+    CD2 HD2  
+    CD1 CE1  
+    CE1 HE1  
+    CD2 CE2  
+    CE2 HE2  
+    CE1 CZ
+    CE2 CZ
+    CZ  CH
+    CH  O1
+    CH  O2
+    CA  C 
+    O   C  
+    C   +N
+  [ impropers ]
+    CH   O2    O1   CZ
+    C  CA  +N  O 
+
+[ NDC ]
+;     |   HA3  HB1 HG1 HD1 HE1 HZ1 HH1 HT5 HI1  HK1    
+;     |   |    |   |   |   |   |   |   |   |   /       
+;     N --CA5--CB--CG--CD--CE--CZ--CH--CT--CI--CK--HK2 
+;     |   |	   |   |   |   |   |   |   |   |   \       
+;     |   HA4  HB2 HG2 HD2 HE2 HZ2 HH2 HT6 HI2  HK3    
+; HA1-CA-HA2                                           
+;     |                                                
+;     |                                                
+;   O=C                                                
+;     |                                                
+;
+    [ atoms ]
+    N    NTOID  -0.354      0
+    CA   CG321  -0.008      0 
+    HA1  HGA2     0.09      0
+    HA2  HGA2     0.09      0
+    CA5  CG321   0.002      1      
+    HA3  HGA2     0.09      1
+    HA4  HGA2     0.09      1
+    CB   CG321   -0.18      2 ;
+    HB1  HGA2     0.09      2 
+    HB2  HGA2     0.09      2
+    CG   CG321  -0.177      3
+    HG1  HGA2    0.090      3
+    HG2  HGA2    0.090      3
+    CD   CG321  -0.183      4
+    HD1  HGA2    0.090      4  
+    HD2  HGA2    0.090      4
+    CE   CG321  -0.180      5    
+    HE1  HGA2    0.090      5  
+    HE2  HGA2    0.090      5
+    CZ   CG321  -0.180      6
+    HZ1  HGA2    0.090      6
+    HZ2  HGA2    0.090      6
+    CH   CG321  -0.180      7     
+    HH1  HGA2    0.090      7      
+    HH2  HGA2    0.090      7
+    CT   CG321  -0.183      8    
+    HT5  HGA2    0.090      8  
+    HT6  HGA2    0.090      8
+    CI   CG321  -0.177      9
+    HI1  HGA2    0.090      9
+    HI2  HGA2    0.090      9
+    CK   CG331  -0.270     10    
+    HK1  HGA3    0.090     10   
+    HK2  HGA3    0.090     10
+    HK3  HGA3    0.090     10 ;
+    C    CG2O1    0.53     11
+    O    OG2D1   -0.53     11
+    [ bonds ]
+    N    CA5 
+    N    CA 
+    C    +N  
+    CA   C
+    CA   HA1 
+    CA   HA2
+    CA5  CB 
+    CA5  HA3
+    CA5  HA4
+    CB   CG
+    CB   HB1  
+    CB   HB2  
+    CG   CD  
+    CG   HG1  
+    CG   HG2  
+    CD   CE  
+    CD   HD1
+    CD   HD2
+    CE   CZ
+    CE   HE1  
+    CE   HE2
+    CZ   CH  
+    CZ   HZ1  
+    CZ   HZ2 
+    CH   CT  
+    CH   HH1  
+    CH   HH2  
+    CT   CI
+    CT   HT5  
+    CT   HT6
+    CI   CK  
+    CI   HI1  
+    CI   HI2 
+    CK   HK1 
+    CK   HK2  
+    CK   HK3
+    C    O
+    [ impropers ]
+    ;N -C CA CA5 
+    ;C CA +N O  
+    C CA +N O 
+
+[NPBE]; Br
+;                     HD1  HE1
+;                     |    |
+;      |   HA3   HB1  CD1-CE1
+;      |   |     |   //      \\
+;      N --CA5--CB--CG       CZ1-BRH-LP1
+;      |   |     |   \   __  /
+;      |   HA4   HB2  CD2--CE2
+;  HA1-CA-HA2          |    |
+;      |              HD2  HE2
+;      |  
+;    O=C   
+;      |
+;
+    [ atoms ]
+    N    NTOID  -0.354    0
+    CA   CG321  -0.008    0
+    HA1  HGA2     0.09    0 
+    HA2  HGA2     0.09    0 
+    CA5  CG321   0.002    1
+    HA3  HGA2     0.09    1
+    HA4  HGA2     0.09    1
+    CB   CG321   -0.18    2    
+    HB1  HGA2     0.09    2   
+    HB2  HGA2     0.09    2         
+    CG   CG2R61 -0.008    3
+    CD1  CG2R61 -0.11     4
+    HD1  HGR61   0.115    4
+    CE1  CG2R61 -0.057    5
+    HE1  HGR61   0.149    5
+    CZ1  CG2R61 -0.056    6
+    BRH  BRGR1  -0.18     6
+    LP1    LPH   0.050    6
+    CD2  CG2R61 -0.11     7
+    HD2  HGR61   0.115    7
+    CE2  CG2R61 -0.057    8
+    HE2  HGR61   0.149    8
+    C    CG2O1   0.53     9
+    O    OG2D1  -0.53     9
+    [ bonds ]
+    CB CA5  
+    CG CB     
+    N  CA5  
+    N  CA  
+    C  CA   
+    C  +N  
+    CA HA1  
+    CA HA2 
+    CB HB1 
+    CB HB2    
+    CG CD2  
+    CD1 CE1  
+    CE2 CZ1
+    CD1 HD1  
+    CD2 HD2  
+    CE1 HE1  
+    CE2 HE2  
+    CZ1 BRH
+    CA5 HA3  
+    CA5 HA4
+    O  C  
+    CG CD1  
+    CD2 CE2  
+    CE1 CZ1
+
+;LONEPAIR COLI LP1    BRH   CZ1    DIST 1.8900 SCAL 0.0
+
+    [ impropers ]
+    ;N -C CA  CA5  
+    ;C CA +N O   
+    C CA +N O
+
+[ NPF ] ; sarcosin+pentaluorotoluene
+;                     FD1  FE1
+;                     |    |
+;      |   HA3   HB1  CD1-CE1
+;      |   |     |   //      \\
+;      N --CA5--CB--CG       CZ-FZ
+;      |   |     |   \   __  /
+;      |   HA4   HB2  CD2--CE2
+;  HA1-CA-HA2          |    |
+;      |              FD2  FE2
+;      |  
+;    O=C   
+;      |
+;
+  [ atoms ]
+    N    NTOID  -0.354    0
+    CA   CG321  -0.008    0
+    HA1  HGA2     0.09    0 
+    HA2  HGA2     0.09    0 
+    CA5  CG321   0.002    1
+    HA3  HGA2     0.09    1
+    HA4  HGA2     0.09    1
+    CB   CG321   -0.18    2    
+    HB1  HGA2     0.09    2   
+    HB2  HGA2     0.09    2         
+    CG   CG2R61  0.1820   3
+    CD1  CG2R66  0.2080   3
+    FD1  FGR1   -0.1550   3
+    CD2  CG2R66  0.2080   3
+    FD2  FGR1   -0.1550   3
+    CE1  CG2R66 -0.1330   3
+    FE1  FGR1   -0.0820   3
+    CE2  CG2R66 -0.1330   3
+    FE2  FGR1   -0.0820   3
+    CZ   CG2R66  0.2640   3
+    FZ   FGR1   -0.1220   3
+    C    CG2O1    0.53    4
+    O    OG2D1   -0.53    4
+  [ bonds ]
+    N    CA 
+    CA   HA1 
+    CA   HA2
+    N    CA5 
+    CA5  HA3
+    CA5  HA4
+    CA5  CB 
+    CB   HB1 
+    CB   HB2    
+    CB   CG    
+    CG   CD1
+    CD1  FD1
+    CG   CD2  
+    CD2  FD2
+    CD1  CE1 
+    CE1  FE1 
+    CD2  CE2 
+    CE2  FE2 
+    CE1  CZ 
+    CE2  CZ 
+    CZ   FZ
+    CA   C
+    O    C
+    C   +N
+  [ impropers ]
+    ;N -C CA  CA5  
+    ;C CA +N O   
+    C CA +N O
+
+[ CTW ] 
+; NH2 cap at c-terminus. identical to the CT2 in peptoids.c.tdb
+; Renamed as CTW to avoid conflicts with the CT2 in merged.c.tdb
+; peptoids.c.tdb has the same CTW 
+; pdb2gmx will combine these two
+;       |
+;       NT
+;      / \
+;     HT1 HT2
+    [ atoms ]
+    NT    NG2S2   -0.62     0
+    HT1   HGP1     0.30     0
+    HT2   HGP1     0.32     0
+    [ bonds ]
+    -C    NT
+    NT    HT1
+    NT    HT2
+    [ impropers ]
+    -C  -CA  NT  -O
+
+
+[ ACT ] ; Acetylated cap
+; Same as ACE at n terminus in merged.rtp and Nan Li.
+; Renamed as ACT to avoid overlapping with the default merged.rtp.
+; Nan Li has 0.53 and -0.53 charges on C and O, respectively.
+; Here uses 0.51 and -0.51 as from merged.rtp
+; Atom names are same to merged.rtp instead of Nan Li's top.
+; Atom types are assigned according to Nan Li.
+;           HY1
+;           |
+;       HY2-CAY-HY3
+;           |
+;           CY=OY
+;           |
+ [ atoms ]
+	   CAY	   CG331  -0.270  1
+	   HY1     HGA3	   0.090  1
+	   HY2     HGA3	   0.090  1
+	   HY3     HGA3	   0.090  1
+	   CY	   CG2O1   0.510  2
+	   OY	   OG2D1  -0.510  2
+ [ bonds ]
+	   CY	   CAY
+	   CY	   +N
+	   CAY	   HY1
+	   CAY	   HY2
+	   CAY	   HY3
+	   OY	   CY
+ [ impropers ]
+	   CY	   CAY	   +N	   OY
+
+[ FMY ] 
+; formyl cap of N terminus.
+; T. Bastug and S. Kuyucak, Euro. Biophy. J., 2005, 34, 377-382
+; This paper suggests: 
+; Create the parameters from existing residue 
+; with similarity. One can borrow parameters 
+; from Charmm to Amber (and vice versa).
+; Therefore, use DMF as the template.
+; DMF has a net charge of -0.03 on formyl,
+; so combine this net charge to the C atom.
+;       HC
+;       |
+;       CN=OC
+;       |
+ [ atoms ]
+    CN   CG2O1    0.46   0
+    OC   OG2D1   -0.54   0
+    HC   HGR52    0.08   0
+ [ bonds ]
+    CN OC
+    CN HC
+    CN +N
+ [ impropers ]
+    CN +N OC HC
+
+[ M2A ] ; dimethyl amide 
+; from Weisser and Santiso 2019, J. Comput. Chem.
+; dimethyl amide cap at C terminus.
+;    [ O=C]  HT7      
+;        |   |
+;        N--CT5-HT8
+;        |   |
+;        |   HT9
+;        |
+;   HT4-CT3-HT5
+;        |
+;        HT6        
+; NTOID is based on NG2S1 (peptide N), 
+; by Weiser and Santiso. 
+; NG2S0 is RR' sub amide N and proline N in cgenff.
+; it has the vdw same to NG2S1
+ [ atoms ]
+    N    NG2S0   -0.360  0
+    CT3  CG331   -0.090  1
+    HT4  HGA3     0.090  2
+    HT5  HGA3     0.090  3
+    HT6  HGA3     0.090  4
+    CT5  CG331   -0.090  5
+    HT7  HGA3     0.090  6
+    HT8  HGA3     0.090  7
+    HT9  HGA3     0.090  8
+ [ bonds ]
+    N   CT3 
+    CT5 HT7 
+    CT5 HT9
+    CT5 HT8
+    CT5   N
+    CT3 HT4
+    CT3 HT5 
+    CT3 HT6
+
+[TFA] ; Triflouroacetate anion
+;     F1
+;     |
+;  F2-C1-F3
+;     |
+;  O1=C2=O2
+;     [-]
+ [ atoms ]
+    C1  CG302   0.46 0 ; partial charges
+    F1  FGA3   -0.24 1 ; from resp
+    F2  FGA3   -0.24 2 ; terachem
+    F3  FGA3   -0.24 3
+    C2  CG2O3   0.64 4
+    O1  OG2D2  -0.69 5
+    O2  OG2D2  -0.69 6 ; total = -1.00
+ [ bonds ]
+    C1  F1
+    C1  F2
+    C1  F3
+    C1  C2
+    C2  O1
+    C2  O2
+ [ impropers ]
+    C2 O1 O2 C1
