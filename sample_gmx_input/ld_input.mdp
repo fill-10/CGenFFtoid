@@ -1,0 +1,65 @@
+title		= Nte4Npe6 langevin dynamics 
+; Run control
+integrator	= sd		; stochastic integrator
+tinit       = 0         ; init step;
+dt		    = 0.002		; 2 fs
+nsteps		= 5000000	; 0.002*500000 = 10 ns
+; COM motion removal
+comm-mode   = Linear    ;
+nstcomm     = 100       ; remove COM motion every 100 steps
+comm_grps   = System    ;
+; Langevin dynamics
+ld-seed     = -1
+; Output control
+nstxout		= 10000	    ; save coordinates every 20 ps
+nstvout		= 50000		; save velocities every 100 ps
+nstenergy	= 5000		; save energies every 10 ps
+nstlog		= 500		; update log file every 1 ps
+; Bonds
+continuation	        = no		; first dynamics run
+constraint_algorithm    = lincs	    ; holonomic constraints 
+constraints	            = h-bonds	; all bonds (even heavy atom-H bonds) constrained
+lincs_iter	            = 1		    ; accuracy of LINCS
+lincs_order	            = 4		    ; also related to accuracy
+; Neighbor searching
+cutoff-scheme   = Verlet
+ns_type		    = grid		; search neighboring grid cells
+nstlist		    = 10		; 20 fs, largely irrelevant with Verlet
+pbc		= xyz		    ; 3-D PBC
+rlist           = 1.2       ; CHARMM36
+; Electrostatics
+rcoulomb	    = 1.2		; short-range electrostatic cutoff (in nm)
+coulombtype	    = PME	; Particle Mesh Ewald for long-range electrostatics
+epsilon-r       = 78.3      ; water @25C, JBNBS, Vol 56 No 1 Jan 1956
+pme_order	    = 4		; cubic interpolation
+fourierspacing	= 0.12	; grid spacing for FFT
+; Van der Waals
+vdw-type        = cutoff    ; CHARMM36
+vdw-modifier    = force-switch ; CHARMM36 vdw switch
+rvdw-switch     = 1.0       ; CHARMM36 vdw switch
+rvdw		    = 1.2		; short-range van der Waals cutoff (in nm)
+DispCorr	= no	; CHARMM36 account for cut-off vdW scheme
+
+; constrain
+define = -DPOSRES_NBPE -DPOSRES_ION
+
+; Temperature coupling is on
+tcoupl		= V-rescale	; ignored by sd integrator
+tc-grps		= System	; two coupling groups - more accurate
+tau_t		= 2.0	    ; time constant, 1/gamma in ps
+ref_t		= 450 	    ; reference T, one for each group, in K
+
+; Pressure coupling
+pcoupl		        = no	    ; Pressure coupling on in NPT
+pcoupltype	        = isotropic	            ; uniform scaling of box vectors
+tau_p		        = 5.0		            ; time constant, in ps
+ref_p		        = 1.0		            ; reference pressure, in bar
+compressibility     = 4.5e-5	            ; isothermal compressibility of water, bar^-1
+refcoord_scaling    = com
+
+; Periodic boundary conditions
+; Velocity generation
+gen_vel		= yes		; assign velocities from Maxwell distribution
+gen_temp	= 300		; temperature for Maxwell distribution
+gen_seed	= -1		; generate a random seed
+
