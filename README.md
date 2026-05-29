@@ -9,3 +9,4 @@ Yu, T., Luo, X., Prendergast, D., Butterfoss, G. L., Rad, B., Balsara, N. P., ..
 
 Luo, X., Roncoroni, F., Yu, T., Li, N. K., Zuckermann, R. N., Jiang, X., ... & Prendergast, D. (2025). Cooperative Role of Mixed Solvent in the Evaporation-Induced Self-Assembly of Polypeptoid Nanocrystals. ACS Applied Nano Materials, 8(25), 12909-12919.
 
+Please cite.
