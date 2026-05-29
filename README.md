@@ -3,6 +3,12 @@ CHARMM General Force Field for peptoid.
 
 This **framework** combines peptoid backbone parameters (Weiser and Santiso) and side chain parameters (CGenFF). 
 
+charmm36-jul2022_toid.ff/    Gromacs force field files ready to use with _gmx pdb2gmx_.
+
+sample_gmx_input/            Examples of gromacs input for _gmx grompp_ and _gmx mdrun_.
+
+sample_gmx_input/rest2       Examples of REST2 enhanced sampling for **plumed** patched gromacs.
+
 Our selected publications using this force field:
 
 Luo, X., Yu, T., Li, N. K., Zuckermann, R. N., Jiang, X., Balsara, N. P., & Prendergast, D. (2024). Thermodynamic Driving Forces for the Self-Assembly of Diblock Polypeptoids. Acs Nano, 18(23), 14917-14924.
